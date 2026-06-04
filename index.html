@@ -17,24 +17,39 @@
     <div class="cursor__icon" id="cursorIcon"></div>
   </div>
 
-  <!-- Loader -->
-  <div class="loader" id="loader">
-    <div class="loader__inner">
-      <span class="loader__monogram">CG</span>
-      <span class="loader__line"></span>
-      <span class="loader__sub">est. service &amp; hospitality</span>
+  <!-- Scroll progress — a filling glass of wine -->
+  <div class="scroll-wine" id="scrollWine" aria-hidden="true">
+    <span class="scroll-wine__fill"></span>
+  </div>
+
+  <!-- Candle glow (after-hours mode) -->
+  <div class="candle-glow" aria-hidden="true"></div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Curtain / loader -->
+  <div class="curtain" id="curtain">
+    <div class="curtain__panel curtain__panel--top">
+      <div class="curtain__inner">
+        <span class="curtain__monogram">CG</span>
+        <span class="curtain__line"></span>
+        <span class="curtain__sub">est. service &amp; hospitality</span>
+      </div>
     </div>
+    <div class="curtain__panel curtain__panel--bottom"></div>
   </div>
 
   <!-- Nav -->
   <nav class="nav" id="nav">
-    <a href="#hero" class="nav__brand" data-link>CG</a>
+    <a href="#hero" class="nav__brand magnetic" data-link>CG</a>
     <ul class="nav__menu">
-      <li><a href="#about" data-link>The Profile</a></li>
-      <li><a href="#journey" data-link>The Journey</a></li>
-      <li><a href="#palate" data-link>The Palate</a></li>
-      <li><a href="#character" data-link>Character</a></li>
-      <li><a href="#reserve" data-link>Reservations</a></li>
+      <li><a href="#about" class="magnetic" data-link>The Profile</a></li>
+      <li><a href="#journey" class="magnetic" data-link>The Journey</a></li>
+      <li><a href="#palate" class="magnetic" data-link>The Palate</a></li>
+      <li><a href="#character" class="magnetic" data-link>Character</a></li>
+      <li><a href="#quiz" class="magnetic" data-link>The Tasting</a></li>
+      <li><a href="#reserve" class="magnetic" data-link>Reservations</a></li>
     </ul>
   </nav>
 
@@ -53,7 +68,7 @@
       <p class="hero__tag reveal" style="--d:.32s">
         Turning stressful moments into smooth ones — one guest at a time.
       </p>
-      <a href="#about" class="hero__scroll reveal" data-link style="--d:.46s">
+      <a href="#about" class="hero__scroll reveal magnetic" data-link style="--d:.46s">
         <span>Be Seated</span>
         <span class="hero__scroll-arrow"></span>
       </a>
@@ -88,63 +103,119 @@
       </div>
     </section>
 
-    <!-- JOURNEY (timeline with cursor zones) -->
+    <!-- JOURNEY (timeline with cursor zones + plating) -->
     <section class="section journey" id="journey">
       <p class="section__label reveal">II · The Journey</p>
       <h2 class="section__heading reveal">A career in three courses.</h2>
 
-      <ol class="course">
-        <!-- France / patisserie -->
-        <li class="course__item reveal" data-cursor="pastry" data-theme="pastry">
-          <div class="course__when">Dec 2022 — May 2023</div>
-          <div class="course__main">
-            <p class="course__amuse">Amuse-bouche · France</p>
-            <h3 class="course__role">Hospitality Intern</h3>
-            <p class="course__org">AEC Vacances — Forgeassound</p>
-            <p class="course__desc">
-              Began in the patisserie and stepped onto the floor as a Food &amp;
-              Beverage associate through the holiday season. Earned a formal
-              appreciation for teamwork and dedication — her first taste of how
-              warmth scales under pressure.
-            </p>
-            <span class="course__tag">🥐 hover here for a little something sweet</span>
-          </div>
-        </li>
+      <div class="course-wrap">
+        <!-- Animated dotted flight path -->
+        <svg class="flightpath" id="flightpath" viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <clipPath id="flightReveal" clipPathUnits="userSpaceOnUse">
+              <rect id="flightRevealRect" x="0" y="0" width="40" height="0" />
+            </clipPath>
+          </defs>
+          <path class="flightpath__track" id="flightDraw" d="M20,10 C8,200 32,360 20,520 C8,680 32,840 20,990" />
+          <path class="flightpath__draw" d="M20,10 C8,200 32,360 20,520 C8,680 32,840 20,990" clip-path="url(#flightReveal)" />
+          <circle class="flightpath__plane" id="flightPlane" r="6" cx="20" cy="10" />
+        </svg>
 
-        <!-- Aviation / plane -->
-        <li class="course__item reveal" data-cursor="plane" data-theme="plane">
-          <div class="course__when">Sep 2024 — Jun 2025</div>
-          <div class="course__main">
-            <p class="course__amuse">Main course · The Skies</p>
-            <h3 class="course__role">Airport Operations &amp; Customer Service Officer</h3>
-            <p class="course__org">InterGlobe Aviation — IndiGo</p>
-            <p class="course__desc">
-              Check-in, arrivals, and boarding gates — among the most demanding
-              customer environments there are. Trained in poise and grooming, she
-              specialised in caring for VIP flyers and special-needs passengers,
-              keeping departures smooth when the clock was unforgiving.
-            </p>
-            <span class="course__tag">✈️ hover here for clearance to taxi</span>
-          </div>
-        </li>
+        <ol class="course">
+          <!-- France / patisserie -->
+          <li class="course__item reveal" data-cursor="pastry" data-theme="pastry" data-plate="pastry">
+            <div class="course__when">Dec 2022 — May 2023</div>
+            <div class="course__main">
+              <p class="course__amuse">Amuse-bouche · France</p>
+              <h3 class="course__role">Hospitality Intern</h3>
+              <p class="course__org">AEC Vacances — Forgeassound</p>
+              <p class="course__desc">
+                Began in the patisserie and stepped onto the floor as a Food &amp;
+                Beverage associate through the holiday season. Earned a formal
+                appreciation for teamwork and dedication — her first taste of how
+                warmth scales under pressure.
+              </p>
+              <span class="course__tag">🥐 hover here for a little something sweet</span>
+            </div>
+            <div class="course__plate" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <circle class="plate-rim" cx="100" cy="118" r="74" />
+                <circle class="plate-rim plate-rim--inner" cx="100" cy="118" r="60" />
+                <g class="draw-art draw-art--pastry">
+                  <path d="M52,135 Q100,82 148,135 Q100,116 52,135 Z" />
+                  <path d="M70,128 L78,112" />
+                  <path d="M88,123 L94,104" />
+                  <path d="M112,123 L106,104" />
+                  <path d="M130,128 L122,112" />
+                </g>
+              </svg>
+            </div>
+          </li>
 
-        <!-- Fine dining / wine (current) -->
-        <li class="course__item reveal" data-cursor="wine" data-theme="wine">
-          <div class="course__when">Jun 2025 — Present</div>
-          <div class="course__main">
-            <p class="course__amuse">Digestif · The Present</p>
-            <h3 class="course__role">Reservations Sales Associate</h3>
-            <p class="course__org">Praxis Services Pvt. Ltd. · for EHV Internationals</p>
-            <p class="course__desc">
-              Running voice and email reservations for celebrated dining rooms —
-              Indian Accent (Delhi &amp; Mumbai), Comorin, and Fireback — where
-              every booking is a promise of an exceptional evening, made flawless
-              before the guest even arrives.
-            </p>
-            <span class="course__tag">🍷 hover here to swirl, sip &amp; savour</span>
-          </div>
-        </li>
-      </ol>
+          <!-- Aviation / plane -->
+          <li class="course__item reveal" data-cursor="plane" data-theme="plane" data-plate="plane">
+            <div class="course__when">Sep 2024 — Jun 2025</div>
+            <div class="course__main">
+              <p class="course__amuse">Main course · The Skies</p>
+              <h3 class="course__role">Airport Operations &amp; Customer Service Officer</h3>
+              <p class="course__org">InterGlobe Aviation — IndiGo</p>
+              <p class="course__desc">
+                Check-in, arrivals, and boarding gates — among the most demanding
+                customer environments there are. Trained in poise and grooming, she
+                specialised in caring for VIP flyers and special-needs passengers,
+                keeping departures smooth when the clock was unforgiving.
+              </p>
+              <span class="course__tag">✈️ hover here for clearance to taxi</span>
+            </div>
+            <div class="course__plate" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <circle class="plate-rim" cx="100" cy="118" r="74" />
+                <circle class="plate-rim plate-rim--inner" cx="100" cy="118" r="60" />
+                <g class="draw-art draw-art--plane">
+                  <path class="plane-trail" d="M55,162 Q92,150 110,118 Q124,92 150,78" />
+                  <path class="plane-body" d="M58,150 L150,78 L104,128 L100,158 L88,134 Z" />
+                  <path class="plane-fold" d="M150,78 L100,158" />
+                </g>
+              </svg>
+            </div>
+          </li>
+
+          <!-- Fine dining / wine (current) -->
+          <li class="course__item reveal" data-cursor="wine" data-theme="wine" data-plate="wine">
+            <div class="course__when">Jun 2025 — Present</div>
+            <div class="course__main">
+              <p class="course__amuse">Digestif · The Present</p>
+              <h3 class="course__role">Reservations Sales Associate</h3>
+              <p class="course__org">Praxis Services Pvt. Ltd. · for EHV Internationals</p>
+              <p class="course__desc">
+                Running voice and email reservations for celebrated dining rooms —
+                Indian Accent (Delhi &amp; Mumbai), Comorin, and Fireback — where
+                every booking is a promise of an exceptional evening, made flawless
+                before the guest even arrives.
+              </p>
+              <span class="course__tag">🍷 hover here to swirl, sip &amp; savour</span>
+            </div>
+            <div class="course__plate" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <defs>
+                  <clipPath id="wineClip">
+                    <path d="M68,52 L132,52 C132,92 116,116 100,116 C84,116 68,92 68,52 Z" />
+                  </clipPath>
+                </defs>
+                <g class="draw-art draw-art--wine">
+                  <path class="wine-stream" d="M100,18 L100,52" />
+                  <g clip-path="url(#wineClip)">
+                    <rect class="wine-liquid" x="60" y="40" width="80" height="90" />
+                  </g>
+                  <path class="wine-glass" d="M68,52 L132,52 C132,92 116,116 100,116 C84,116 68,92 68,52 Z" />
+                  <path class="wine-glass" d="M100,116 L100,160" />
+                  <path class="wine-glass" d="M80,162 L120,162" />
+                </g>
+              </svg>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <!-- PALATE / Skills -->
@@ -222,19 +293,29 @@
       </blockquote>
     </section>
 
+    <!-- QUIZ / Which course are you -->
+    <section class="section quiz" id="quiz">
+      <p class="section__label reveal">V · The Tasting</p>
+      <h2 class="section__heading reveal">Which course are you?</h2>
+      <p class="character__intro reveal">
+        Four quick questions. We’ll match you to one of Chinmayi’s signature strengths.
+      </p>
+      <div class="quiz__stage reveal" id="quizStage"></div>
+    </section>
+
     <!-- RESERVE / Contact -->
     <section class="section reserve" id="reserve">
-      <p class="section__label reveal">V · Reservations</p>
+      <p class="section__label reveal">VI · Reservations</p>
       <h2 class="reserve__heading reveal">Let’s set a table.</h2>
       <p class="reserve__sub reveal">
         Available for customer experience, hospitality, and guest-relations roles.
       </p>
       <div class="reserve__cards">
-        <a class="reserve__card reveal" href="mailto:ghosh.chinmayi16@gmail.com" data-link>
+        <a class="reserve__card reveal magnetic" href="mailto:ghosh.chinmayi16@gmail.com" data-link>
           <span class="reserve__card-label">Email</span>
           <span class="reserve__card-value">ghosh.chinmayi16@gmail.com</span>
         </a>
-        <a class="reserve__card reveal" href="tel:+919531603272" data-link>
+        <a class="reserve__card reveal magnetic" href="tel:+919531603272" data-link>
           <span class="reserve__card-label">Telephone</span>
           <span class="reserve__card-value">+91 95316 03272</span>
         </a>
@@ -252,8 +333,10 @@
     <span>Hospitality &amp; Customer Experience</span>
     <span class="footer__dot">·</span>
     <span>© 2026</span>
+    <span class="footer__hint" id="footerHint">psst — try typing “wine”</span>
   </footer>
 
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
