@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinmayi Ghosh — Hospitality & Customer Experience</title>
+  <meta name="description" content="The portfolio of Chinmayi Ghosh — a composed, multilingual hospitality and customer-experience professional who turns stressful moments into smooth ones." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Custom morphing cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__icon" id="cursorIcon"></div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <span class="loader__monogram">CG</span>
+      <span class="loader__line"></span>
+      <span class="loader__sub">est. service &amp; hospitality</span>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__brand" data-link>CG</a>
+    <ul class="nav__menu">
+      <li><a href="#about" data-link>The Profile</a></li>
+      <li><a href="#journey" data-link>The Journey</a></li>
+      <li><a href="#palate" data-link>The Palate</a></li>
+      <li><a href="#character" data-link>Character</a></li>
+      <li><a href="#reserve" data-link>Reservations</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <header class="hero" id="hero">
+      <div class="hero__plate" aria-hidden="true">
+        <span class="hero__plate-ring"></span>
+        <span class="hero__plate-ring hero__plate-ring--2"></span>
+      </div>
+      <p class="hero__eyebrow reveal">Customer Service · Aviation · Hospitality</p>
+      <h1 class="hero__title">
+        <span class="reveal" style="--d:.05s">Chinmayi</span>
+        <span class="reveal hero__title-script" style="--d:.18s">Ghosh</span>
+      </h1>
+      <p class="hero__tag reveal" style="--d:.32s">
+        Turning stressful moments into smooth ones — one guest at a time.
+      </p>
+      <a href="#about" class="hero__scroll reveal" data-link style="--d:.46s">
+        <span>Be Seated</span>
+        <span class="hero__scroll-arrow"></span>
+      </a>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <p class="section__label reveal">I · The Profile</p>
+      <div class="about__grid">
+        <h2 class="about__lead reveal">
+          A composed, genuinely caring professional who has built a career out of
+          looking after people <em>precisely</em> when things get difficult.
+        </h2>
+        <div class="about__body">
+          <p class="reveal">
+            A Hospitality Administration graduate with experience spanning fine
+            dining, aviation ground operations, and customer support, Chinmayi is
+            the person who keeps a room calm — the steady presence at the boarding
+            gate, the warm voice on the line, the host who anticipates the need
+            before it is spoken.
+          </p>
+          <p class="reveal">
+            Trilingual and unflappable, she treats empathy as a craft and service
+            as an art form. Below is a tasting menu of her work.
+          </p>
+          <ul class="about__facts">
+            <li class="reveal"><span>03</span>Languages spoken</li>
+            <li class="reveal"><span>03</span>Industries served</li>
+            <li class="reveal"><span>∞</span>Calm under pressure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY (timeline with cursor zones) -->
+    <section class="section journey" id="journey">
+      <p class="section__label reveal">II · The Journey</p>
+      <h2 class="section__heading reveal">A career in three courses.</h2>
+
+      <ol class="course">
+        <!-- France / patisserie -->
+        <li class="course__item reveal" data-cursor="pastry" data-theme="pastry">
+          <div class="course__when">Dec 2022 — May 2023</div>
+          <div class="course__main">
+            <p class="course__amuse">Amuse-bouche · France</p>
+            <h3 class="course__role">Hospitality Intern</h3>
+            <p class="course__org">AEC Vacances — Forgeassound</p>
+            <p class="course__desc">
+              Began in the patisserie and stepped onto the floor as a Food &amp;
+              Beverage associate through the holiday season. Earned a formal
+              appreciation for teamwork and dedication — her first taste of how
+              warmth scales under pressure.
+            </p>
+            <span class="course__tag">🥐 hover here for a little something sweet</span>
+          </div>
+        </li>
+
+        <!-- Aviation / plane -->
+        <li class="course__item reveal" data-cursor="plane" data-theme="plane">
+          <div class="course__when">Sep 2024 — Jun 2025</div>
+          <div class="course__main">
+            <p class="course__amuse">Main course · The Skies</p>
+            <h3 class="course__role">Airport Operations &amp; Customer Service Officer</h3>
+            <p class="course__org">InterGlobe Aviation — IndiGo</p>
+            <p class="course__desc">
+              Check-in, arrivals, and boarding gates — among the most demanding
+              customer environments there are. Trained in poise and grooming, she
+              specialised in caring for VIP flyers and special-needs passengers,
+              keeping departures smooth when the clock was unforgiving.
+            </p>
+            <span class="course__tag">✈️ hover here for clearance to taxi</span>
+          </div>
+        </li>
+
+        <!-- Fine dining / wine (current) -->
+        <li class="course__item reveal" data-cursor="wine" data-theme="wine">
+          <div class="course__when">Jun 2025 — Present</div>
+          <div class="course__main">
+            <p class="course__amuse">Digestif · The Present</p>
+            <h3 class="course__role">Reservations Sales Associate</h3>
+            <p class="course__org">Praxis Services Pvt. Ltd. · for EHV Internationals</p>
+            <p class="course__desc">
+              Running voice and email reservations for celebrated dining rooms —
+              Indian Accent (Delhi &amp; Mumbai), Comorin, and Fireback — where
+              every booking is a promise of an exceptional evening, made flawless
+              before the guest even arrives.
+            </p>
+            <span class="course__tag">🍷 hover here to swirl, sip &amp; savour</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PALATE / Skills -->
+    <section class="section palate" id="palate">
+      <p class="section__label reveal">III · The Palate</p>
+      <h2 class="section__heading reveal">Refined over every service.</h2>
+      <div class="palate__menu">
+        <div class="palate__col">
+          <h3 class="reveal">Signature Skills</h3>
+          <ul class="dish-list">
+            <li class="reveal"><span class="dish-list__name">Communication</span><span class="dish-list__dots"></span><span class="dish-list__note">fluent</span></li>
+            <li class="reveal"><span class="dish-list__name">Customer Handling</span><span class="dish-list__dots"></span><span class="dish-list__note">signature</span></li>
+            <li class="reveal"><span class="dish-list__name">Situation Handling</span><span class="dish-list__dots"></span><span class="dish-list__note">house specialty</span></li>
+            <li class="reveal"><span class="dish-list__name">Teamwork</span><span class="dish-list__dots"></span><span class="dish-list__note">commended</span></li>
+            <li class="reveal"><span class="dish-list__name">Adaptability</span><span class="dish-list__dots"></span><span class="dish-list__note">seasonal</span></li>
+            <li class="reveal"><span class="dish-list__name">Critical Thinking</span><span class="dish-list__dots"></span><span class="dish-list__note">aged well</span></li>
+            <li class="reveal"><span class="dish-list__name">Leadership</span><span class="dish-list__dots"></span><span class="dish-list__note">rising</span></li>
+          </ul>
+        </div>
+        <div class="palate__col">
+          <h3 class="reveal">Languages</h3>
+          <ul class="dish-list">
+            <li class="reveal"><span class="dish-list__name">English</span><span class="dish-list__dots"></span><span class="dish-list__note">professional</span></li>
+            <li class="reveal"><span class="dish-list__name">Hindi</span><span class="dish-list__dots"></span><span class="dish-list__note">native</span></li>
+            <li class="reveal"><span class="dish-list__name">Bengali</span><span class="dish-list__dots"></span><span class="dish-list__note">native</span></li>
+          </ul>
+          <h3 class="reveal" style="margin-top:2.6rem">Off the Clock</h3>
+          <ul class="dish-list dish-list--plain">
+            <li class="reveal"><span class="dish-list__name">Singing</span></li>
+            <li class="reveal"><span class="dish-list__name">Music</span></li>
+            <li class="reveal"><span class="dish-list__name">Cooking &amp; Baking</span></li>
+            <li class="reveal"><span class="dish-list__name">Reading</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARACTER / Personality analysis -->
+    <section class="section character" id="character">
+      <p class="section__label reveal">IV · The Character</p>
+      <h2 class="section__heading reveal">The personality behind the poise.</h2>
+      <p class="character__intro reveal">
+        A strengths-based reading drawn from her work. Hover a trait to pour the glass.
+      </p>
+      <div class="traits">
+        <div class="trait reveal" style="--v:90%">
+          <div class="trait__head"><span>Agreeableness</span><em>High</em></div>
+          <div class="trait__bar"><span></span></div>
+          <p class="trait__note">A career built around guest care, VIP and special-needs flyers, and teamwork commendations.</p>
+        </div>
+        <div class="trait reveal" style="--v:85%">
+          <div class="trait__head"><span>Conscientiousness</span><em>High</em></div>
+          <div class="trait__bar"><span></span></div>
+          <p class="trait__note">Steady academics, trained poise, and a clean job-to-job progression with no gaps.</p>
+        </div>
+        <div class="trait reveal" style="--v:72%">
+          <div class="trait__head"><span>Extraversion</span><em>Moderate–High</em></div>
+          <div class="trait__bar"><span></span></div>
+          <p class="trait__note">Front desks, boarding gates, and voice processes — all sustained people contact. And she sings.</p>
+        </div>
+        <div class="trait reveal" style="--v:60%">
+          <div class="trait__head"><span>Openness</span><em>Moderate</em></div>
+          <div class="trait__bar"><span></span></div>
+          <p class="trait__note">Trilingual and creative, with a focused, practical path rather than an experimental one.</p>
+        </div>
+        <div class="trait reveal" style="--v:22%">
+          <div class="trait__head"><span>Neuroticism</span><em>Low · very stable</em></div>
+          <div class="trait__bar trait__bar--invert"><span></span></div>
+          <p class="trait__note">Repeatedly placed where composure is rewarded — gates, holiday rushes, special-needs care.</p>
+        </div>
+      </div>
+      <blockquote class="character__quote reveal">
+        “A composed, genuinely caring team player who turns stressful customer
+        moments into smooth ones — dependable, multilingual, and quietly ambitious.”
+      </blockquote>
+    </section>
+
+    <!-- RESERVE / Contact -->
+    <section class="section reserve" id="reserve">
+      <p class="section__label reveal">V · Reservations</p>
+      <h2 class="reserve__heading reveal">Let’s set a table.</h2>
+      <p class="reserve__sub reveal">
+        Available for customer experience, hospitality, and guest-relations roles.
+      </p>
+      <div class="reserve__cards">
+        <a class="reserve__card reveal" href="mailto:ghosh.chinmayi16@gmail.com" data-link>
+          <span class="reserve__card-label">Email</span>
+          <span class="reserve__card-value">ghosh.chinmayi16@gmail.com</span>
+        </a>
+        <a class="reserve__card reveal" href="tel:+919531603272" data-link>
+          <span class="reserve__card-label">Telephone</span>
+          <span class="reserve__card-value">+91 95316 03272</span>
+        </a>
+        <div class="reserve__card reveal">
+          <span class="reserve__card-label">Located</span>
+          <span class="reserve__card-value">Gurugram, Haryana · India</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Chinmayi Ghosh</span>
+    <span class="footer__dot">·</span>
+    <span>Hospitality &amp; Customer Experience</span>
+    <span class="footer__dot">·</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
