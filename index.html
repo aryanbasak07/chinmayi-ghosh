@@ -199,17 +199,23 @@
               <svg viewBox="0 0 200 200">
                 <defs>
                   <clipPath id="wineClip">
-                    <path d="M68,52 L132,52 C132,92 116,116 100,116 C84,116 68,92 68,52 Z" />
+                    <path d="M94,46 L94,78 C94,84 76,92 76,106 L76,166 Q76,172 82,172 L118,172 Q124,172 124,166 L124,106 C124,92 106,84 106,78 L106,46 Z" />
                   </clipPath>
                 </defs>
                 <g class="draw-art draw-art--wine">
-                  <path class="wine-stream" d="M100,18 L100,52" />
+                  <!-- wine filling the bottle -->
                   <g clip-path="url(#wineClip)">
-                    <rect class="wine-liquid" x="60" y="40" width="80" height="90" />
+                    <rect class="wine-liquid" x="72" y="108" width="56" height="80" />
                   </g>
-                  <path class="wine-glass" d="M68,52 L132,52 C132,92 116,116 100,116 C84,116 68,92 68,52 Z" />
-                  <path class="wine-glass" d="M100,116 L100,160" />
-                  <path class="wine-glass" d="M80,162 L120,162" />
+                  <!-- bottle body -->
+                  <path class="wine-glass" d="M94,46 L94,78 C94,84 76,92 76,106 L76,166 Q76,172 82,172 L118,172 Q124,172 124,166 L124,106 C124,92 106,84 106,78 L106,46 Z" />
+                  <!-- cork / cap -->
+                  <path class="wine-glass" d="M93,30 Q93,27 96,27 L104,27 Q107,27 107,30 L107,46 L93,46 Z" />
+                  <path class="wine-glass" d="M93,38 L107,38" />
+                  <!-- label -->
+                  <path class="wine-glass" d="M80,118 L120,118 L120,150 L80,150 Z" />
+                  <path class="wine-glass" d="M88,132 L112,132" />
+                  <path class="wine-glass" d="M92,140 L108,140" />
                 </g>
               </svg>
             </div>

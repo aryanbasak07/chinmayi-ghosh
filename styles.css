@@ -333,16 +333,12 @@ main { position: relative; z-index: 1; }
   100% { transform: translate(0,0); }
 }
 
-/* Wine glass pour */
+/* Wine bottle — outline + rising fill */
 .wine-glass { fill: none; stroke: var(--gold-soft); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transition: opacity .6s var(--ease); }
 .is-plated .wine-glass { opacity: 1; }
-.wine-liquid { fill: var(--wine); transform: translateY(90px); }
-.is-plated .wine-liquid { animation: pour 1.6s var(--ease) .5s forwards; }
-.wine-stream { fill: none; stroke: var(--wine); stroke-width: 3; stroke-linecap: round; opacity: 0; stroke-dasharray: 40; stroke-dashoffset: 40; }
-.is-plated .wine-stream { animation: stream .6s var(--ease) .2s forwards, streamOut .4s ease 1s forwards; }
-@keyframes pour { from { transform: translateY(90px); } to { transform: translateY(30px); } }
-@keyframes stream { from { opacity: .9; stroke-dashoffset: 40; } to { opacity: .9; stroke-dashoffset: 0; } }
-@keyframes streamOut { to { opacity: 0; } }
+.wine-liquid { fill: var(--wine); transform: translateY(80px); }
+.is-plated .wine-liquid { animation: pour 1.7s var(--ease) .55s forwards; }
+@keyframes pour { from { transform: translateY(80px); } to { transform: translateY(0); } }
 
 /* Flight path SVG behind timeline */
 .flightpath {
@@ -464,22 +460,39 @@ a.reserve__card:hover { border-color: var(--gold); background: rgba(201,163,106,
    AFTER-HOURS (Easter egg)
    ============================================================ */
 .candle-glow { position: fixed; inset: 0; z-index: 600; pointer-events: none; opacity: 0; transition: opacity 1.4s var(--ease); }
-body.after-hours { --char: #0a0705; --cream: #f0e2c8; --cream-dim: #b29a78; --gold: #e0a94e; --gold-soft: #f2cd86; --line: rgba(224,169,78,0.2); }
+body.after-hours {
+  --char: #1a0509;
+  --cream: #f3dfc2;
+  --cream-dim: #c19a86;
+  --gold: #e8a64a;
+  --gold-soft: #f6cf80;
+  --wine: #9c2238;
+  --line: rgba(232,166,74,0.24);
+}
+/* deep wine wash over the whole page */
+body.after-hours::before {
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(232,166,74,0.16), transparent 55%),
+    radial-gradient(130% 100% at 50% 120%, rgba(124,16,34,0.55), transparent 65%);
+  filter: saturate(1.25);
+}
 body.after-hours .candle-glow {
   opacity: 1;
   background:
-    radial-gradient(40% 50% at 22% 30%, rgba(255,170,70,0.12), transparent 70%),
-    radial-gradient(45% 55% at 80% 60%, rgba(255,150,60,0.10), transparent 70%),
-    radial-gradient(60% 70% at 50% 110%, rgba(120,40,30,0.25), transparent 70%);
-  animation: flicker 4s ease-in-out infinite;
+    radial-gradient(38% 46% at 20% 26%, rgba(255,176,72,0.22), transparent 70%),
+    radial-gradient(42% 52% at 82% 58%, rgba(255,150,60,0.20), transparent 70%),
+    radial-gradient(80% 90% at 50% 120%, rgba(120,18,34,0.55), transparent 68%),
+    radial-gradient(140% 120% at 50% 50%, transparent 52%, rgba(8,2,4,0.72) 100%);
+  animation: flicker 3.4s ease-in-out infinite;
 }
 @keyframes flicker {
-  0%, 100% { opacity: .92; }
-  25% { opacity: 1; }
-  50% { opacity: .85; }
-  72% { opacity: .97; }
+  0%, 100% { opacity: .9; }
+  18% { opacity: 1; }
+  37% { opacity: .8; }
+  55% { opacity: .98; }
+  74% { opacity: .86; }
+  88% { opacity: 1; }
 }
-body.after-hours::before { filter: saturate(1.1); }
 
 /* ============================================================
    REVEAL ANIMATIONS
@@ -493,5 +506,5 @@ body.after-hours::before { filter: saturate(1.1); }
   .reveal { opacity: 1; transform: none; }
   .plate-rim, .wine-glass { opacity: 1; }
   .draw-art path { stroke-dashoffset: 0 !important; }
-  .wine-liquid { transform: translateY(30px); }
+  .wine-liquid { transform: translateY(0); }
 }
